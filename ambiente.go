@@ -61,6 +61,7 @@ func (a *ambiente) ciclo() {
 
 	a.claridade()
 	a.ventar()
+	a.ceu()
 
 }
 
@@ -68,7 +69,7 @@ func main() {
 
 	var executando bool = true
 	var ciclos int = 0
-
+	var finaliza int = 10 * ((100) * 2)
 	var amb = ambientenovo()
 
 	for {
@@ -105,6 +106,7 @@ func main() {
 			}
 
 			fmt.Printf("\n\t Luz :  %.2f - %s", amb.luz, amb.luminosidadeCorrenteNome())
+			fmt.Printf("\n\t Nuvens :  %.2f - %s", amb.nuvem, amb.nuvemCorrente())
 
 			fmt.Println()
 
@@ -112,7 +114,7 @@ func main() {
 		}
 
 		ciclos++
-		if ciclos >= 600 {
+		if ciclos >= finaliza {
 			executando = false
 		}
 
